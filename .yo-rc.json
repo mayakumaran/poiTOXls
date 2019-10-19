@@ -1,0 +1,35 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.bytatech"
+    },
+    "jhipsterVersion": "5.8.1",
+    "applicationType": "microservice",
+    "baseName": "elasticbatch",
+    "packageName": "com.bytatech",
+    "packageFolder": "com/bytatech",
+    "serverPort": "8081",
+    "authenticationType": "oauth2",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MTY3M2ZkMDUwZGM5ZDQ3MzZjMjU2ZGY5MDkzNzE0ZWZmNmY1NGE1MjQ2NTI1MTdlYmI2ZjJkYzMzYmRmN2RmOTY1MmRjNjZhZTUzY2YyYTdhNjM1MGJkZTRkYzc3NTBlODU2NjQ5ZDE0OWE0ZjUyOGFlZjc5MWNjOTgzN2M4MmE=",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
