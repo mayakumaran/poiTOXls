@@ -2,7 +2,7 @@ package com.bytatech.service.dto;
 
 public class DrivoData {
 
-
+   
 	private String regNo;
 	private String ownerName;
 	private String mobileNo;

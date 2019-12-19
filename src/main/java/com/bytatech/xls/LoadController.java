@@ -16,19 +16,24 @@
 package com.bytatech.xls;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.bytatech.domain.Drivo;
 import com.bytatech.service.dto.DrivoData;
+import com.bytatech.service.mapper.DrivoMapper;
+import com.bytatech.web.rest.DrivoResource;
 
 /**
  * @author maya mayabytatech, maya.k.k@lxisoft.com
@@ -38,16 +43,24 @@ import com.bytatech.service.dto.DrivoData;
 @RequestMapping("/api")
 public class LoadController {
 
+	@Autowired
+	DrivoResource drivoResource;
+	
+	@Autowired
+	DrivoMapper drivoMapper;
+	
 	@PostMapping("/import")
-	public void mapReapExcelDatatoDB(@RequestParam("file") MultipartFile reapExcelDataFile) throws IOException {
+	public void mapReapExcelDatatoDB(@RequestParam("file") MultipartFile reapExcelDataFile) throws IOException, URISyntaxException {
 
-		List<DrivoData> tempDriveList = new ArrayList<DrivoData>();
+		List<Drivo> tempDriveList = new ArrayList<Drivo>();
+		
 		XSSFWorkbook workbook = new XSSFWorkbook(reapExcelDataFile.getInputStream());
+		
 		XSSFSheet worksheet = workbook.getSheetAt(0);
 
 		for (int i = 0; i < worksheet.getPhysicalNumberOfRows(); i++) {
 			
-			DrivoData tempDrive = new DrivoData();
+			Drivo tempDrive = new Drivo();
 			XSSFRow row = worksheet.getRow(i);
 			tempDrive.setRegNo(row.getCell(0).getStringCellValue());
 			tempDrive.setOwnerName(row.getCell(1).getStringCellValue());
@@ -56,6 +69,8 @@ public class LoadController {
 
 			System.out.println(tempDrive);
 
+			drivoResource.createDrivo(drivoMapper.toDto(tempDrive));
+			
 			tempDriveList.add(tempDrive);
 
 		}
