@@ -85,6 +85,7 @@
 /home/maya/workspace/elasticbatch/src/main/java/com/bytatech/config/FeignConfiguration.java
 /home/maya/workspace/elasticbatch/src/main/java/com/bytatech/domain/Authority.java
 /home/maya/workspace/elasticbatch/src/main/java/com/bytatech/config/OAuth2TokenServicesConfiguration.java
+/home/maya/workspace/elasticbatch/src/main/java/com/bytatech/service/dto/DrivoFile.java
 /home/maya/workspace/elasticbatch/src/main/java/com/bytatech/config/JacksonConfiguration.java
 /home/maya/workspace/elasticbatch/src/main/java/com/bytatech/config/Constants.java
 /home/maya/workspace/elasticbatch/src/main/java/com/bytatech/domain/package-info.java
