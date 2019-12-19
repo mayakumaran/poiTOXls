@@ -1,0 +1,12 @@
+entity Drivo {
+	regNo String,
+	ownerName String,
+	mobileNo String,
+	vehdecscr String
+}
+
+
+
+service all with serviceImpl 
+dto all with mapstruct
+paginate all with pagination

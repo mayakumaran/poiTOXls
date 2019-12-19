@@ -1,0 +1,6 @@
+com/bytatech/domain/Drivo_.class
+com/bytatech/domain/Authority_.class
+com/bytatech/domain/User_.class
+com/bytatech/domain/PersistentAuditEvent_.class
+com/bytatech/service/mapper/DrivoMapperImpl.class
+com/bytatech/domain/AbstractAuditingEntity_.class
